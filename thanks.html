@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | TrueLine Tools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="/" class="logo">TrueLine<span>Tools</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="buy">
+      <div class="wrap buy-inner">
+        <h2>Thank you for your order</h2>
+        <p>A receipt is on its way to your email. We'll send tracking once your order ships.</p>
+        <p class="note">This is a test store: no real payment was taken.</p>
+        <a href="/" class="btn btn-light">Back to the store</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // The order went through, so empty the cart.
+    try { localStorage.removeItem("trueline-cart"); } catch (e) {}
+  </script>
+</body>
+</html>

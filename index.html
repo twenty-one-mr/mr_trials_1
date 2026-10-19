@@ -12,7 +12,10 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <a href="#" class="logo">TrueLine<span>Tools</span></a>
-      <a href="#buy" class="btn btn-small">Buy now</a>
+      <div class="nav-actions">
+        <a href="#shop" class="link">Shop</a>
+        <button type="button" class="btn btn-small" data-open-cart>Cart <span class="cart-count">0</span></button>
+      </div>
     </div>
   </header>
 
@@ -28,8 +31,8 @@
             plus a plumb line to the floor, and sends every mark straight to your phone.
           </p>
           <div class="hero-actions">
-            <a href="#buy" class="btn">Get yours, $499</a>
-            <a href="#features" class="link">See features &rarr;</a>
+            <button type="button" class="btn" data-add="trueline-pro">Add to cart, $499</button>
+            <a href="#shop" class="link">See all models &amp; attachments &rarr;</a>
           </div>
         </div>
 
@@ -80,14 +83,23 @@
       </div>
     </section>
 
+    <!-- Shop: cards are filled in by cart.js -->
+    <section id="shop" class="shop">
+      <div class="wrap">
+        <h2>Models &amp; attachments</h2>
+        <p class="shop-lead">Mix and match, then check out once. Free standard shipping on orders over $1,000.</p>
+        <div id="shop-grid" class="shop-grid"></div>
+      </div>
+    </section>
+
     <!-- Buy -->
     <section id="buy" class="buy">
       <div class="wrap buy-inner">
         <h2>TrueLine Pro</h2>
         <p class="price">$499</p>
         <p>Includes tripod, rechargeable battery, and hard case. Three-year warranty.</p>
-        <a href="#" class="btn btn-light">Add to cart</a>
-        <p class="note">Free shipping in the US &middot; 30-day returns</p>
+        <button type="button" class="btn btn-light" data-add="trueline-pro">Add to cart</button>
+        <p class="note">Free standard shipping over $1,000 &middot; 30-day returns</p>
       </div>
     </section>
   </main>
@@ -98,5 +110,23 @@
     </div>
   </footer>
 
+  <!-- Cart drawer -->
+  <div class="cart-backdrop" hidden></div>
+  <aside class="cart" aria-label="Shopping cart" hidden>
+    <div class="cart-head">
+      <h2>Your cart</h2>
+      <button type="button" class="cart-close" data-close-cart aria-label="Close cart">&times;</button>
+    </div>
+    <p class="test-banner">Test mode: pay with card 4242 4242 4242 4242, any future date, any CVC.</p>
+    <ul class="cart-items"></ul>
+    <div class="cart-foot">
+      <div class="cart-total"><span>Subtotal</span><strong class="cart-subtotal">$0.00</strong></div>
+      <p class="cart-ship-note"></p>
+      <button type="button" class="btn checkout-btn">Checkout</button>
+      <p class="cart-error" role="alert"></p>
+    </div>
+  </aside>
+
+  <script src="cart.js"></script>
 </body>
 </html>
